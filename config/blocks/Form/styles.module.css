@@ -1,0 +1,203 @@
+/* styles.module.css */
+
+.Form {
+  background-image: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 64px 24px;
+}
+
+.Form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.Form h2 {
+  line-height: 1.1;
+  font-size: 36px;
+  margin: 0;
+  color: var(--puck-color-grey-09);
+}
+
+@media (min-width: 768px) {
+  .Form h2 {
+    font-size: 48px;
+  }
+}
+
+.Form-subtitle {
+  color: var(--puck-color-grey-05);
+  font-size: var(--puck-font-size-m);
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.Form--hasImageBackground .Form-subtitle {
+  color: var(--puck-color-grey-03);
+}
+
+.Form-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Form-imageOverlay {
+  background-image: linear-gradient(
+    -90deg,
+    rgb(247, 250, 255, 0.7) 0%,
+    rgb(247, 250, 255, 0.7) 80%
+  );
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  .Form--left .Form-imageOverlay {
+    background-image: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(247, 250, 255) 70%
+    );
+  }
+}
+
+.Form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .Form--hasImageBackground .Form-content {
+    max-width: 50%;
+  }
+}
+
+.Form--center .Form-inner {
+  justify-content: center;
+  text-align: center;
+}
+
+.Form--center .Form-content {
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.Form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Form-field label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--puck-color-grey-08);
+}
+
+.Form-field input[type="text"],
+.Form-field textarea,
+.Form-field select {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--puck-color-grey-03);
+  border-radius: 6px;
+  color: black;
+  background-color: #ffffff; /* White background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Form-field input[type="text"]:focus,
+.Form-field textarea:focus,
+.Form-field select:focus {
+  border-color: var(--puck-color-azure-06);
+  outline: none;
+  color: black;
+  box-shadow: 0 0 0 3px rgb(234, 234, 234);
+}
+
+.Form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.Form-radio,
+.Form-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  accent-color: var(--puck-color-azure-06); /* Better visibility for checked state */
+}
+
+.Form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px; /* Add spacing between label and options */
+}
+
+.Form-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px; /* Add spacing between options */
+}
+
+.Form-options label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--puck-color-grey-06);
+}
+
+.Form-radio:disabled,
+.Form-checkbox:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Improve hover states when not disabled */
+.Form-radio:not(:disabled):hover,
+.Form-checkbox:not(:disabled):hover {
+  cursor: pointer;
+}
+
+/* Style the checked state */
+.Form-radio:checked,
+.Form-checkbox:checked {
+  border-color: var(--puck-color-azure-06);
+}
+
+.Form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Disabled state for Puck editor */
+.Form-field input:disabled,
+.Form-field textarea:disabled,
+.Form-field select:disabled {
+  background-color: var(--puck-color-grey-02);
+  color: var(--puck-color-grey-06); /* Darker text for disabled state */
+  cursor: not-allowed;
+}
