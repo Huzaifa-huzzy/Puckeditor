@@ -1,3 +1,12 @@
+File changes in config/blocks/Form new file added Form
+Files changes in index.tsx
+
+
+
+
+
+
+
 # `next` recipe
 
 The `next` recipe showcases one of the most powerful ways to implement Puck using to provide an authoring tool for any route in your Next app.
